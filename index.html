@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08090c" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://api.github.com; font-src 'self'; base-uri 'self'; form-action 'self'" />
+  <meta name="description" content="我的私人游戏与番剧评级档案：从夯到拉。" />
+  <title>从夯到拉 · 私人评级档案</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090c'/%3E%3Cpath d='M18 18h28v10H28v8h16v10H18z' fill='%23d8ff3e'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="is-loading" data-mode="game">
+  <div class="site-bg" aria-hidden="true">
+    <div class="site-bg__layer site-bg__layer--game" data-bg="game"></div>
+    <div class="site-bg__layer site-bg__layer--anime" data-bg="anime"></div>
+    <div class="site-bg__scrim"></div>
+    <div class="site-bg__grid"></div>
+    <div class="site-bg__noise"></div>
+  </div>
+
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#/" aria-label="返回评级表首页">
+      <span class="brand__mark" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </span>
+      <span class="brand__text">
+        <strong>TIER<span>/</span>00</strong>
+        <small>PRIVATE RATING ARCHIVE</small>
+      </span>
+    </a>
+
+    <nav class="topnav" aria-label="主导航">
+      <a href="#board" data-nav="board">评级表</a>
+      <button type="button" data-open="about">关于</button>
+      <button type="button" data-open="admin" id="adminNavBtn">管理</button>
+    </nav>
+
+    <div class="topbar__tools">
+      <span class="owner-badge" id="ownerBadge" hidden>OWNER</span>
+      <button class="icon-btn sound-btn" id="soundToggle" type="button" aria-pressed="true" aria-label="关闭音效" title="音效开">
+        <svg class="icon-sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5-2.5a7 7 0 0 1 0 11M19 4a11 11 0 0 1 0 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12 1 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="打开菜单">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#board" data-nav="board">评级表 <em>INDEX</em></a>
+    <button type="button" data-open="about">关于本站 <em>ABOUT</em></button>
+    <button type="button" data-open="admin">内容管理 <em>OWNER</em></button>
+    <div class="mobile-menu__foot">从夯到拉 · 私人档案 · <span id="mobileYear">2026</span></div>
+  </div>
+
+  <main id="app">
+    <!-- ============ HOME ============ -->
+    <div class="view view--home" id="view-home">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero__rail" aria-hidden="true">
+          <span>VOL. 01</span>
+          <i></i>
+          <span>EST. 2026</span>
+        </div>
+
+        <div class="hero__main">
+          <p class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span>
+            PERSONAL ARCHIVE / 只收录亲自玩过与看过的
+          </p>
+
+          <h1 class="hero__title" id="heroTitle" aria-label="从夯到拉">
+            <span class="hero__char reveal" data-reveal><span>从</span><em>01</em></span>
+            <span class="hero__char hero__char--filled reveal" data-reveal><span>夯</span><em>HANG</em></span>
+            <span class="hero__char hero__char--small reveal" data-reveal><span>到</span></span>
+            <span class="hero__char reveal" data-reveal><span>拉</span><em>LA</em></span>
+          </h1>
+
+          <div class="hero__lower">
+            <p class="hero__lead reveal" data-reveal>
+              游戏与番剧分开展示。排名会变，偏爱也会变。<br />
+              这里只负责诚实地记录某一刻的感受。
+            </p>
+
+            <div class="hero__stats reveal" data-reveal>
+              <div class="stat">
+                <span class="stat__num" id="statCount">00</span>
+                <span class="stat__label">收录 / TITLES</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" id="statAvg">0.0</span>
+                <span class="stat__label">均分 / AVERAGE</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" id="statTop">00</span>
+                <span class="stat__label">夯级 / TOP TIER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__side">
+          <div class="mode-switch" role="group" aria-label="切换游戏或番剧">
+            <span class="mode-switch__indicator" aria-hidden="true"></span>
+            <button class="mode-switch__btn is-active" type="button" data-mode="game" aria-pressed="true">
+              <span class="mode-switch__no">01</span>
+              <span class="mode-switch__cn">游戏</span>
+              <span class="mode-switch__en">GAMES</span>
+            </button>
+            <button class="mode-switch__btn" type="button" data-mode="anime" aria-pressed="false">
+              <span class="mode-switch__no">02</span>
+              <span class="mode-switch__cn">番剧</span>
+              <span class="mode-switch__en">ANIME</span>
+            </button>
+          </div>
+
+          <div class="now-card reveal" data-reveal>
+            <div class="now-card__top">
+              <span>NOW IN VIEW</span>
+              <span id="nowId">GAME / 01</span>
+            </div>
+            <div class="now-card__body">
+              <p id="nowCaption">游戏档案</p>
+              <strong id="nowTitle">GAMES</strong>
+            </div>
+            <div class="now-card__line" aria-hidden="true"></div>
+            <p class="now-card__hint">点击下方卡片，进入单篇评价</p>
+          </div>
+
+          <a class="scroll-cue" href="#board" aria-label="滚动到评级表">
+            <span>SCROLL TO RANK</span>
+            <i aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="board-section" id="board" aria-labelledby="boardTitle">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">THE TIER LIST <span id="boardModeLabel">/ GAMES</span></p>
+            <h2 id="boardTitle">评级表 <span class="cn-sub">从 夯 到 拉</span></h2>
+          </div>
+          <div class="section-head__right">
+            <div class="edit-state" id="editState">
+              <span class="edit-state__dot"></span>
+              <span id="editStateText">只读模式</span>
+            </div>
+            <button class="btn btn--ghost btn--small" type="button" id="editToggle" hidden>
+              <span class="btn__icon">✎</span><span id="editToggleText">调整排名</span>
+            </button>
+            <p class="board-updated">LAST UPDATE <span id="updatedAt">—</span></p>
+          </div>
+        </div>
+
+        <div class="tier-legend" aria-label="评级含义">
+          <span><b>夯</b> 会主动安利给所有人的级别</span>
+          <span><b>顶级</b> 非常好，私心很重</span>
+          <span><b>人上人</b> 有毛病，但依然喜欢</span>
+          <span><b>NPC</b> 看过/玩过，感情复杂</span>
+          <span><b>拉</b> 暂时没放进来的理由</span>
+        </div>
+
+        <div class="tier-board" id="tierBoard" aria-live="polite"></div>
+
+        <div class="board-foot">
+          <button class="btn btn--add" type="button" id="addEntryBtn" hidden><span>＋</span> 添加一部作品</button>
+          <p class="board-foot__note" id="boardHint">当前为只读档案。内容只由站主通过管理入口修改。</p>
+          <div class="board-foot__stamp" aria-hidden="true">CURATED<br />WITH<br />BIAS</div>
+        </div>
+      </section>
+
+      <section class="manifesto">
+        <p class="manifesto__no">/ MANIFESTO</p>
+        <div class="manifesto__text">
+          <p><em>评分不是判决书。</em></p>
+          <p>它只是某一天的我，坐在屏幕前，愿意为一段体验留下多少位置。</p>
+        </div>
+        <div class="manifesto__meta">
+          <span>GAMES / ANIME</span>
+          <span>NO SPOILER POLICY</span>
+          <span>JUST FOR MYSELF</span>
+        </div>
+      </section>
+
+      <footer class="site-foot">
+        <p>TIER/00 — PERSONAL RATING ARCHIVE</p>
+        <p>图像版权归原作者与发行商所有 · 仅作个人非商业展示</p>
+        <button type="button" class="text-link" data-open="about">READ ABOUT ↗</button>
+      </footer>
+    </div>
+
+    <!-- ============ DETAIL ============ -->
+    <div class="view view--detail" id="view-detail" hidden></div>
+  </main>
+
+  <div id="fxRoot" aria-hidden="true"></div>
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="toast-root" id="toastRoot" role="status" aria-live="polite"></div>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
