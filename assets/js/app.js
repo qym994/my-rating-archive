@@ -386,6 +386,7 @@ function renderBoard() {
   }
 
   el.tierBoard.innerHTML = pieces.join('');
+  const pendingImages = [];
   $$('.entry-card__media img', el.tierBoard).forEach(img => {
     const media = img.closest('.entry-card__media');
     if (!media) return;
@@ -394,6 +395,26 @@ function renderBoard() {
       return;
     }
     img.addEventListener('load', () => media.classList.add('is-loaded'), { once: true });
+    pendingImages.push({ img, media });
+  });
+  // On slow or throttled connections an offscreen <img> can sit un-decoded for
+  // a long time. Warm the same URL with an in-memory Image and swap it in when
+  // it is ready; LQIP keeps the card presentable while this happens.
+  pendingImages.forEach(({ img, media }, index) => {
+    setTimeout(() => {
+      if (!media.isConnected || media.classList.contains('is-loaded')) return;
+      const warm = new Image();
+      warm.alt = '';
+      warm.loading = 'eager';
+      warm.decoding = 'async';
+      warm.onload = () => {
+        if (!media.isConnected) return;
+        const current = media.querySelector('img');
+        if (current && current !== warm) current.replaceWith(warm);
+        media.classList.add('is-loaded');
+      };
+      warm.src = img.getAttribute('src');
+    }, 180 + index * 55);
   });
   if (el.boardHint) {
     el.boardHint.textContent = state.isEditing
