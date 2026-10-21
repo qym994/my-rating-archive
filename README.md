@@ -2,6 +2,10 @@
 
 我的私人游戏 / 番剧评级档案。纯静态站点，无框架、无后端、无追踪。
 
+**线上地址：<https://qym994.github.io/my-rating-archive/>**
+
+当前部署方式：GitHub Pages · `main` 分支根目录 · 已开启 `.nojekyll`。
+
 ## 本地预览
 
 在项目根目录启动任意静态服务器：
@@ -34,23 +38,18 @@ python -m http.server 8765
 
 ## 部署到 GitHub Pages
 
-### 方式 A：GitHub Actions（推荐）
+### 当前方式：从 main 分支发布（推荐）
 
-1. 在 GitHub 新建一个空仓库（Public 或 Private 均可；Private 需要 Pro 才能开启 Pages）。
-2. 将本目录推送到仓库的 `main` 分支。
-3. 打开仓库 **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**。
-4. 打开 **Actions** 标签，等待 `Deploy static site to Pages` 完成。
-5. 访问 `https://<用户名>.github.io/<仓库名>/`。
+1. 把本目录推送到仓库的 `main` 分支。
+2. 打开仓库 **Settings → Pages → Build and deployment → Source**，选择 **Deploy from a branch**。
+3. 分支选择 `main`，目录选择 `/ (root)`。
+4. 等待 Pages 构建完成，访问 `https://<用户名>.github.io/<仓库名>/`。
 
-仓库已经包含 `.github/workflows/pages.yml`，它会只把网页需要的文件放进 `_site`，不会把 `.work/` 里的素材草稿发布出去。
+根目录已有 `.nojekyll`，避免 Jekyll 处理静态文件。`robots.txt` 与页面内的 `noindex` 都是建议搜索引擎不要收录这个私人页面。
 
-### 方式 B：从分支直接发布
+### 可选：GitHub Actions
 
-1. 推送到 `main`。
-2. **Settings → Pages → Source → Deploy from a branch**，选择 `main` / `/ (root)`。
-3. 等待构建完成。
-
-根目录已有 `.nojekyll`，避免 Jekyll 处理静态文件。
+仓库也包含 `.github/workflows/pages.yml`。如果希望改用 Actions，把 Pages 的 Source 改成 **GitHub Actions**，之后每次推送 `main` 都会自动部署。该 workflow 只把网页所需文件放进 `_site`，不会发布 `.work/` 素材草稿。
 
 ## 修改内容
 
@@ -151,7 +150,7 @@ Token 只保存在当前标签页的 `sessionStorage`，关闭标签页即失效
 
 ## 技术说明
 
-- 原生 ES Modules、CSS、Canvas 无依赖。
+- 原生 ES Modules + CSS，无运行时依赖。
 - 路由使用 hash（`#/game/elden-ring`），无需服务器 rewrite，适合 GitHub Pages 子路径部署。
 - 背景、转场、音效都支持 `prefers-reduced-motion`；音效可在右上角关闭。
 - 数据由 `content.json` 提供，页面端所有用户内容均做 HTML 转义。

@@ -209,8 +209,8 @@ export function playTransition(entry, { onReveal } = {}) {
   fx.style.setProperty('--fx-accent', accent);
   if (entry?.accent) fx.style.setProperty('--entry-color', entry.accent);
   fx.innerHTML = type === 'boot' ? bootBody() : bodyFor(type);
-  if (type !== 'boot' && entry?.image) {
-    const image = String(entry.image).replace(/["'\\\n\r()]/g, '');
+  if (type !== 'boot' && (entry?.thumb || entry?.image)) {
+    const image = String(entry.thumb || entry.image).replace(/["'\\\n\r()]/g, '');
     const stage = fx.querySelector('.fx__stage');
     if (stage && image) {
       stage.insertAdjacentHTML('afterbegin', `
@@ -280,12 +280,12 @@ export function playTransition(entry, { onReveal } = {}) {
     timers.push(setTimeout(() => fx.remove(), 2500));
   } else {
     timers.push(setTimeout(() => sound.whoosh(), 260));
-    timers.push(setTimeout(reveal, 740));
+    timers.push(setTimeout(reveal, 1100));
     timers.push(setTimeout(() => {
       fx.classList.add('is-out');
       cleanup();
-    }, 1060));
-    timers.push(setTimeout(() => fx.remove(), 1700));
+    }, 1500));
+    timers.push(setTimeout(() => fx.remove(), 2200));
   }
 
   return new Promise(resolve => {

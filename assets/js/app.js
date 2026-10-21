@@ -495,7 +495,10 @@ function renderDetailPage(entry) {
   const scoreSafe = Number.isFinite(score) ? score : 0;
   const prev = index > 0 ? list[index - 1] : null;
   const next = index >= 0 && index < list.length - 1 ? list[index + 1] : null;
-  const image = safeURL(entry.image || entry.thumb || '');
+  const fullImage = safeURL(entry.image || entry.thumb || '');
+  // Start with the already-cached card thumbnail so the page never flashes black,
+  // then progressively swap in the higher-resolution background.
+  const image = safeURL(entry.thumb || entry.image || '');
   const pos = safePosition(entry.imagePosition);
   const typeLabel = entry.type === 'game' ? 'GAME' : 'ANIME';
   const typeCn = entry.type === 'game' ? '游戏' : '番剧';
@@ -596,6 +599,16 @@ function renderDetailPage(entry) {
     </div>`;
   document.title = `${entry.title} · 从夯到拉`;
   state.currentEntry = entry;
+
+  if (fullImage && fullImage !== image) {
+    const hiRes = new Image();
+    hiRes.onload = () => {
+      if (state.currentEntry?.id !== entry.id) return;
+      const target = $('.detail-bg__img', detail);
+      if (target) target.style.backgroundImage = `url("${fullImage}")`;
+    };
+    hiRes.src = fullImage;
+  }
 }
 
 function renderHomeRoute({ anchor = '', scroll = true } = {}) {
@@ -1482,6 +1495,8 @@ function bindDragAndDrop() {
     }
     const id = state.dragId;
     state.dragId = null;
+    state.justDragged = true;
+    setTimeout(() => { state.justDragged = false; }, 260);
     clearDropStyles();
     reorderEntry(id, row.dataset.tier, beforeId);
   });
