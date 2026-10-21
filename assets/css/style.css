@@ -921,6 +921,8 @@ body[data-mode="anime"] .mode-switch__indicator { transform: translateY(100%); }
   background:
     radial-gradient(circle at 28% 20%, rgba(var(--tier-rgb), 0.24), transparent 56%),
     linear-gradient(140deg, #1c2028, #0d0f14 70%);
+  background-position: var(--pos, center);
+  background-size: cover;
   filter: saturate(0.82) brightness(0.82);
   transform: scale(1.015);
   transition: transform 0.7s var(--ease), filter 0.5s ease;
@@ -951,7 +953,9 @@ body[data-mode="anime"] .mode-switch__indicator { transform: translateY(100%); }
   transition: opacity 0.45s ease;
 }
 .entry-card__media.is-loaded img { opacity: 1; }
-.entry-card__media.is-loaded::after { opacity: 0; }
+.entry-card__media.is-loaded::after,
+.entry-card__media.has-lqip::after { opacity: 0; }
+.entry-card__media.has-lqip::after { display: none; }
 .entry-card::after {
   position: absolute;
   inset: 0;

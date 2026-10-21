@@ -263,7 +263,10 @@ function setBackdropLayer(mode) {
   const source = mode === 'anime'
     ? state.content.site?.heroAnime || 'assets/img/hero-anime.webp'
     : state.content.site?.heroGame || 'assets/img/hero-game.webp';
-  if (!layers[index].style.backgroundImage) layers[index].style.backgroundImage = `url("${safeURL(source)}")`;
+  const lqip = mode === 'anime' ? state.content.site?.heroAnimeLqip : state.content.site?.heroGameLqip;
+  if (!layers[index].style.backgroundImage) {
+    layers[index].style.backgroundImage = `url("${safeURL(source)}")${lqip ? `, url("${safeURL(lqip)}")` : ''}`;
+  }
 }
 
 function updateBackdrop() {
@@ -331,11 +334,12 @@ function cardMarkup(entry, index) {
   const tier = tierOf(entry);
   const showEdit = state.isEditing;
   const image = safeURL(entry.thumb || entry.image || '');
+  const lqip = safeURL(entry.lqip || '');
   const pos = safePosition(entry.imagePosition);
   const initial = String(entry.title || '?').trim().slice(0, 1);
   return `
     <button class="entry-card" type="button" data-id="${escapeAttr(entry.id)}" draggable="${showEdit}" aria-label="查看《${escapeAttr(entry.title)}》的评价" title="${escapeAttr(entry.quote || entry.title)}">
-      <span class="entry-card__media" data-initial="${escapeAttr(initial)}" style='--pos:${pos}'>${image ? `<img src="${image}" alt="" loading="eager" decoding="async" />` : ''}</span>
+      <span class="entry-card__media${lqip ? ' has-lqip' : ''}" data-initial="${escapeAttr(initial)}" style='--pos:${pos};${lqip ? `background-image:url("${lqip}")` : ''}'>${image ? `<img src="${image}" alt="" loading="eager" decoding="async" />` : ''}</span>
       <span class="entry-card__no"></span>
       <span class="entry-card__top">
         <span class="entry-card__rank">NO.${String(index + 1).padStart(2, '0')}</span>
@@ -520,9 +524,10 @@ function renderDetailPage(entry) {
   const prev = index > 0 ? list[index - 1] : null;
   const next = index >= 0 && index < list.length - 1 ? list[index + 1] : null;
   const fullImage = safeURL(entry.image || entry.thumb || '');
-  // Start with the already-cached card thumbnail so the page never flashes black,
-  // then progressively swap in the higher-resolution background.
-  const image = safeURL(entry.thumb || entry.image || '');
+  const thumbImage = safeURL(entry.thumb || entry.image || '');
+  // A tiny inline image paints instantly; then the card thumbnail and finally
+  // the high-resolution background replace it as they arrive.
+  const image = safeURL(entry.lqip || '') || thumbImage;
   const pos = safePosition(entry.imagePosition);
   const typeLabel = entry.type === 'game' ? 'GAME' : 'ANIME';
   const typeCn = entry.type === 'game' ? '游戏' : '番剧';
@@ -624,15 +629,17 @@ function renderDetailPage(entry) {
   document.title = `${entry.title} · 从夯到拉`;
   state.currentEntry = entry;
 
-  if (fullImage && fullImage !== image) {
-    const hiRes = new Image();
-    hiRes.onload = () => {
+  const swapDetailImage = source => {
+    if (!source) return;
+    const loader = new Image();
+    loader.onload = () => {
       if (state.currentEntry?.id !== entry.id) return;
       const target = $('.detail-bg__img', detail);
-      if (target) target.style.backgroundImage = `url("${fullImage}")`;
+      if (target) target.style.backgroundImage = `url("${source}")`;
     };
-    hiRes.src = fullImage;
-  }
+    loader.src = source;
+  };
+  if (fullImage && fullImage !== image) swapDetailImage(fullImage);
 }
 
 function renderHomeRoute({ anchor = '', scroll = true } = {}) {
@@ -1406,6 +1413,7 @@ function saveEntryFromForm(panel, original, isNew) {
     switchGame: data.get('switchGame') === 'on',
     accent: safeColor(data.get('accent'), type === 'game' ? '#d8ff3e' : '#ff809b')
   };
+  if (entry.image !== original.image) entry.lqip = '';
 
   if (isNew) {
     list.push(entry);

@@ -6,14 +6,46 @@
     "owner": "ME",
     "updatedAt": "2026-10-21",
     "heroGame": "assets/img/hero-game.webp",
-    "heroAnime": "assets/img/hero-anime.webp"
+    "heroAnime": "assets/img/hero-anime.webp",
+    "heroGameLqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABwBQCdASooABYAPwFyr1KrJqQipWzJYCAJZAC7ADnfVfX5aiVWPv+W7/XvVcYutsyiceAAAP73eW1k/LAQU6le1+aKp91GgHyHQQfqoiwAcsfID5VHnzmJnzL/tq29M2XlB0N7ESnB9tcEGgu0Ljd3OlLyMgVg2+v8CjmhaK4PRa7riRoy4XWhAMGv5F8J+znR+XPwk7wBHivQH8vL4C4QAAA=",
+    "heroAnimeLqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAABwBgCdASooABYAPwFyrFArJyQiqqwBYCAJYgC4MA39e97HUP17tdBwRbgz6CmG5aMixcSR+H5eapIF4QAA9vfP+cA3pjsHwwSzCp3xaQ/+UMkruB7q4kULwIRDqOw380m+dZ+/UeplHiccxd4tWmCanlHUPLAJNIbrSQvGYhT7M7Jkzda6nC0KirrxDvBj59AiEOb5H24wL40SaDNyrgSIZZZk2daoIFn0aiVYpHEKa0U1FRKuQqVzCzsmto6K+ej6Thf88UKYCv8ADXa9LOSiVtV5dlba3pBWbzo0BYdZACtGAAA="
   },
   "tiers": [
-    { "id": "hang", "label": "夯", "en": "HANG", "ghost": "S", "desc": "会主动安利给所有人的级别" },
-    { "id": "top", "label": "顶级", "en": "TOP", "ghost": "A", "desc": "非常好，私心很重" },
-    { "id": "renshangren", "label": "人上人", "en": "ELITE", "ghost": "B", "desc": "有毛病，但依然喜欢" },
-    { "id": "npc", "label": "NPC", "en": "NPC", "ghost": "C", "desc": "看过 / 玩过，感情复杂" },
-    { "id": "la", "label": "拉", "en": "LA", "ghost": "D", "desc": "暂时没放进来的理由" }
+    {
+      "id": "hang",
+      "label": "夯",
+      "en": "HANG",
+      "ghost": "S",
+      "desc": "会主动安利给所有人的级别"
+    },
+    {
+      "id": "top",
+      "label": "顶级",
+      "en": "TOP",
+      "ghost": "A",
+      "desc": "非常好，私心很重"
+    },
+    {
+      "id": "renshangren",
+      "label": "人上人",
+      "en": "ELITE",
+      "ghost": "B",
+      "desc": "有毛病，但依然喜欢"
+    },
+    {
+      "id": "npc",
+      "label": "NPC",
+      "en": "NPC",
+      "ghost": "C",
+      "desc": "看过 / 玩过，感情复杂"
+    },
+    {
+      "id": "la",
+      "label": "拉",
+      "en": "LA",
+      "ghost": "D",
+      "desc": "暂时没放进来的理由"
+    }
   ],
   "games": [
     {
@@ -34,13 +66,20 @@
         "孤独感是它最珍贵的东西。一个人走在旷野里，只有脚步声和远处的钢琴声；但每次点亮神庙、遇见旅人，又会觉得这个世界在轻轻回应你。"
       ],
       "memory": "在雨里爬不上悬崖，干脆坐看云海；第一次用盾反打死守护者；把波克布林全部推进河里。",
-      "tags": ["开放世界", "冒险", "孤独感", "Switch", "神作"],
+      "tags": [
+        "开放世界",
+        "冒险",
+        "孤独感",
+        "Switch",
+        "神作"
+      ],
       "image": "assets/img/zelda-botw.webp",
       "thumb": "assets/img/zelda-botw-thumb.webp",
       "accent": "#8fe3c0",
       "imagePosition": "center 42%",
       "transition": "boot",
-      "switchGame": true
+      "switchGame": true,
+      "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAACwBQCdASogABIAPvVkqU4qpaOiMAgBUB6JYgCdMoM6AEmB6vEoNDlZ8O5LfNkRFpBiTxzE1wAA/j7BZYvcY/IZNuy4hjK1VO+v3YWQQAlnPvhzG9eqnylAOF2EUhawIFAi4EFT8hXzVMAb+Jj+J0EWXbPTufudVkd++Ya7xkZDDyQgOwIE5uXc6Uk+kTrzMX7Z046FDqZOvBtOqcY1FfTW2p4P02+xrYXQsVDbMWiymk5hdLgAAA=="
     },
     {
       "id": "elden-ring",
@@ -60,13 +99,20 @@
         "它的体量大到后期难免疲惫，但当我终于站在王座前，回头看这一路的赐福和尸体，还是觉得这是一场值得走完的朝圣。"
       ],
       "memory": "第一次被大树守卫教育；在盖利德迷路到天亮；和朋友联机打女武神，死了二十次还在笑。",
-      "tags": ["魂系", "开放世界", "高难度", "美术", "史诗"],
+      "tags": [
+        "魂系",
+        "开放世界",
+        "高难度",
+        "美术",
+        "史诗"
+      ],
       "image": "assets/img/elden-ring.webp",
       "thumb": "assets/img/elden-ring-thumb.webp",
       "accent": "#e6c36b",
       "imagePosition": "center 38%",
       "transition": "ring",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABQBQCdASogABIAPvVorE4qpiQiMAgBUB6JQBOmWhhfh61GCJUj38IdxOT7vDnBB5OHcWAA/uv/I3tsCrPnH+XuoNuzUbJ9EBsZmbNzmV5GaZ+B63EiivcuaIbH/PF15pFCNRY0jXGyZcBbS186gGBagQow9OsjP+7oAS69qXghriyM0R+7g9EfRIAAAA=="
     },
     {
       "id": "rdr2",
@@ -86,13 +132,20 @@
         "这不是一个让人“爽”的游戏，它更像一本很厚的小说。合上之后，你会记住那些火光、马背和没来得及说出口的话。"
       ],
       "memory": "在营地听大家唱歌；为了打一只完美皮在森林里蹲了半小时；结尾那句“I tried”。",
-      "tags": ["西部", "叙事", "慢热", "亚瑟", "开放世界"],
+      "tags": [
+        "西部",
+        "叙事",
+        "慢热",
+        "亚瑟",
+        "开放世界"
+      ],
       "image": "assets/img/rdr2.webp",
       "thumb": "assets/img/rdr2-thumb.webp",
       "accent": "#d8a45f",
       "imagePosition": "center 32%",
       "transition": "bounty",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBACdASogABIAPvVqsVCqpaSiqAqpUB6JYgCsOUAAZgupV8kwJxXkKOZIwBR+wAD+W1hFOs1puAmDCARIoMXRlhR+Gdsa8zrPoLE55Qen4Ba2wN8saRW8MLD/l21nlt3Gv7Bb+HC9UQptYiYv+A17hu3ZF/6LJ6UkXxkdaXCUWeX6LEymp56nfdIbFuwA1ScrqaMYzK/2U4AA"
     },
     {
       "id": "persona-5",
@@ -112,13 +165,20 @@
         "皇家版新增的内容让结局更完整，也把“逃避现实”这个主题推得更深。虽然迷宫后期有点长，但它依然是我心里最华丽的一部 JRPG。"
       ],
       "memory": "第一次听到 Last Surprise；把全部假期拿来刷社群；在雨夜的涩谷街头舍不得回安全屋。",
-      "tags": ["JRPG", "美术", "日常", "怪盗", "东京"],
+      "tags": [
+        "JRPG",
+        "美术",
+        "日常",
+        "怪盗",
+        "东京"
+      ],
       "image": "assets/img/persona-5.webp",
       "thumb": "assets/img/persona-5-thumb.webp",
       "accent": "#ff4b47",
       "imagePosition": "center 38%",
       "transition": "heart",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRmwBAABXRUJQVlA4IGABAAAQBwCdASogABUAPvVkqk4qpaOiMAgBUB6JbACdL0Mmf6fi18Ch6Gstge2OLzv/n7Mzu4pSOYDBz7tUzWn2dEnxsAD+0ovguwGsWkD3Nw0os+EnvWr9mWb9RtsKJAMYjIVfTgSJlP+XvjZbUR1ggtBR1388zR63wux6hdSx0QJCBPa48zvV0ZSBEHT3T0ed0f18Q007CyPCmvt8GK0OfkTfs++2uFBBg1bljOkJyW45H3LLBl/5IOO8jw1l3ZHfXIX9r1X2WRHis7q+aInEZs8RhSkKWROvpKTAFTTlAru9g2GdAiP2pw/cUx11SgxyT1u1lXV09if1HufWNgYukNPDea1FoNTg1aROSJQ7JZs2PRLogaaLHl9uIljPhRO/LlqxmiH4FqYPM/mimnXXdpeL/+9P076yXHZ0OF/G0DJ2HFIR1o/YCAvpMfELW+Uof5+59+JOeAHQVcnmn2MwAAAA"
     },
     {
       "id": "rimworld",
@@ -138,13 +198,20 @@
         "Mod 让它可以变成几乎任何东西，但原版已经足够深。玩到后期确实会变成Excel管理，可当你看着自己从三个人的破帐篷发展到一座有医院和监狱的殖民地，那种满足感很难替代。"
       ],
       "memory": "给殖民者取名之后就不敢让他们死；一场雷暴烧掉半个基地；靠卖人皮沙发度过冬天（不是）。",
-      "tags": ["沙盒", "模拟经营", "故事生成", "Mod", "时间黑洞"],
+      "tags": [
+        "沙盒",
+        "模拟经营",
+        "故事生成",
+        "Mod",
+        "时间黑洞"
+      ],
       "image": "assets/img/rimworld.webp",
       "thumb": "assets/img/rimworld-thumb.webp",
       "accent": "#d9a441",
       "imagePosition": "center 42%",
       "transition": "colony",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAwBgCdASogABIAPvVmrVAqpSQisBgIAVAeiWIAuzNYF/gSjIcSn9dqlJaX7GFMcVXQxOf9GtJnxEIYAP71dHz2w77h6yOAXlkPEPA5exDmymoOLDo5UAzzfdMozX3peZgjeVBo9iD8uXPREqidMGh4z8hQeRz/yQt/v2X8rGJd4w/zUQM+5tTBAtCGMAWi4EW2S9XdVfoQwl+afxkqutpV1UUWztPijcVBQeoiNixqlI3eJscMAA=="
     },
     {
       "id": "unicorn-overlord",
@@ -164,13 +231,20 @@
         "剧情是比较传统的王道复国，但人物足够可爱，支线也不敷衍。它没有颠覆 SRPG，只是把这一类型做得非常漂亮、非常顺手。"
       ],
       "memory": "为了让所有角色都上场，反复重编队伍；看骑兵冲锋演出；在试玩版里就决定要买。",
-      "tags": ["SRPG", "Vanillaware", "编队", "王道", "美术"],
+      "tags": [
+        "SRPG",
+        "Vanillaware",
+        "编队",
+        "王道",
+        "美术"
+      ],
       "image": "assets/img/unicorn-overlord.webp",
       "thumb": "assets/img/unicorn-overlord-thumb.webp",
       "accent": "#e9b86f",
       "imagePosition": "center 35%",
       "transition": "boot",
-      "switchGame": true
+      "switchGame": true,
+      "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAQBgCdASogABIAPvVorE4qpiQiMAgBUB6JZQC7G1bQsr0HnilxBUjHgMsU6VbvsoyzcdFFY1bXdBgA/tIjw9r5iQw67BuD338+oi9d6KmldRdJq1Nv86zffolWU7DewoIvRGuGLpDGZPSDxnNroHWLebzWiAPk6+OFgXpETgzj6wGD0q1hs8+D7W4TN3c0idVQ0aMiPciiewGWVevbdoTVT6xpMeTvoO9ieeO5ruXIgJ89P2M+tR1lThJvQp2uPGkC0EG7Ir7WIMnqA/14AA=="
     },
     {
       "id": "apex",
@@ -190,13 +264,20 @@
         "我还是会时不时回去打两把。落地成盒也好，决赛圈一穿三也好，那种肾上腺素是别的游戏很难给的。"
       ],
       "memory": "用恶灵传送门救队友；在碎片东被三队夹击；第一次吃鸡时手抖到按错键。",
-      "tags": ["FPS", "大逃杀", "身法", "开黑", "坐牢"],
+      "tags": [
+        "FPS",
+        "大逃杀",
+        "身法",
+        "开黑",
+        "坐牢"
+      ],
       "image": "assets/img/apex.webp",
       "thumb": "assets/img/apex-thumb.webp",
       "accent": "#ff5a36",
       "imagePosition": "center 35%",
       "transition": "scan",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBQCdASogABMAPvVmq04qpaQiMAgBUB6JZACsMt8DVF2Aww11aeSta52Ghn350eImVXagAP7mAUD3AY340hOVQzrJ3CC597Elc8A7zdYJNZpK+5zLFIPe03fbQjkgS9qnQkb1kx58vWWaxfr8HshlSa6YgD6B/11BdEh7j8Rjcb5+boZwheodsyUPLVqwV0N478l+AQN1ay09JeAEQ1xoOaT7dwN1hUrxg2vFw3KRcWDuVxIBfm4Mw8fi1QAA"
     },
     {
       "id": "lol",
@@ -216,13 +297,20 @@
         "给 8.2 不是因为它完美，而是因为它在我的人生里占了太大一块。它早就不只是游戏了，是一段时间、一群人、一些再也回不去的周末。"
       ],
       "memory": "五排到凌晨三点；第一次上黄金；大乱斗才是本体；为了一局排位和室友冷战。",
-      "tags": ["MOBA", "青春", "开黑", "又爱又恨", "PC"],
+      "tags": [
+        "MOBA",
+        "青春",
+        "开黑",
+        "又爱又恨",
+        "PC"
+      ],
       "image": "assets/img/lol.webp",
       "thumb": "assets/img/lol-thumb.webp",
       "accent": "#5cd6ff",
       "imagePosition": "center 35%",
       "transition": "portal",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAADwBQCdASogABIAPvVkqU4qpaOiMAgBUB6JZACdOUEKAfnbdYNoJlIB0wqxwjmAWh/NL7xkrPI8XAD95tgs2kHMrvfTGrauVPwzYsoi4EqtgyTA0BEiL/E5itVzocGnzUsnyON3Ae/5FK44k/pkcplntt2cWrebJxfijNNo3rJJ1lWgQkqvBzi9lQVAmi473AL6sQb61wJwmzppJq0POMDdRRAuW2yxKfy7IV2iB6u3nd7iLRYi1uzLWbY54nNtp9/2G7kym/3P5VJpbhwvatgA"
     }
   ],
   "anime": [
@@ -244,13 +332,20 @@
         "冈部伦太郎不是传统意义上的英雄。他只是一个不停失去、又不停重来的普通人。结尾那一声“作战开始”，我每次看都会起鸡皮疙瘩。"
       ],
       "memory": "看到中途突然明白 OP 的含义；为了一个结局反复查攻略；在秋叶原的街景里找彩蛋。",
-      "tags": ["时间旅行", "悬疑", "慢热", "神作", "秋叶原"],
+      "tags": [
+        "时间旅行",
+        "悬疑",
+        "慢热",
+        "神作",
+        "秋叶原"
+      ],
       "image": "assets/img/steins-gate.webp",
       "thumb": "assets/img/steins-gate-thumb.webp",
       "accent": "#7dffab",
       "imagePosition": "center 38%",
       "transition": "crt",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRhgBAABXRUJQVlA4IAwBAAAwBgCdASogABQAPvVkqU4qpaOiMAgBUB6JYgCdMoKNmiwEWWMsO5LdPJIhMEnP4tzjAG3CJncFouHAAPvzMVac7m/laJ9EKgK81ZxJlB46mTp8zbVlF6wOc+n5cJwXCU30zuYuYHzMEekUIKrzGFgRcC/nffMO8oBU8TX2hNDyNeY0Vh2+3qBG0rbQIyx3WFyu1Pq52mjP1cqNJwlfIok+2pgCsLrlcI6J5sauA9SvgL3giScS0asHAno2ZiylCuH+i/4VzK3u0PNgt/qMoub8vVGfQfwaVkSZJnpGtETGjfC6149RUkfh6AZfXBmzkNQRMTznvbAKYr5b5uaB64/lSE9vkbQBBtr6TTAA"
     },
     {
       "id": "frieren",
@@ -270,13 +365,20 @@
         "芙莉莲不是突然变得懂感情了。她只是开始收集那些人类留下的、很小的东西。看完之后会更想认真对待身边的人，这大概就是它最厉害的地方。"
       ],
       "memory": "辛美尔回忆杀；菲伦生气的表情；在片尾曲里不想跳过。",
-      "tags": ["奇幻", "公路", "治愈", "时间", "后日谈"],
+      "tags": [
+        "奇幻",
+        "公路",
+        "治愈",
+        "时间",
+        "后日谈"
+      ],
       "image": "assets/img/frieren.webp",
       "thumb": "assets/img/frieren-thumb.webp",
       "accent": "#8fe3c0",
       "imagePosition": "center 35%",
       "transition": "petals",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAQBQCdASogABIAPvVoq04qpiQiMAgBUB6JQBdkEzcKox9EWITWFKx+eQkeqn0F63agAPe8ksLGA41mrGN+aKbUFOlcWjrmi1u8ny6gHZRE85Pdx8ZisniFsvy7OS4ned2LuY6R1+1zGx9TmsKa3FkltMeb1wItW22C5lLOWKc8ZkL4AYs8RHyRS4Sj94S5Ty8Os5ocgmSrAN7otLaTtww7kAA="
     },
     {
       "id": "fate-zero",
@@ -296,13 +398,20 @@
         "ufotable 的打斗和音乐把这种宿命感推到了极致。看完之后很难立刻看下一部番，需要缓一缓。"
       ],
       "memory": "Saber 和 Berserker 的追逐战；切嗣在废墟里做选择；片尾曲一响就知道要出事。",
-      "tags": ["圣杯战争", "虚渊玄", "悲剧", "群像", "ufotable"],
+      "tags": [
+        "圣杯战争",
+        "虚渊玄",
+        "悲剧",
+        "群像",
+        "ufotable"
+      ],
       "image": "assets/img/fate-zero.webp",
       "thumb": "assets/img/fate-zero-thumb.webp",
       "accent": "#8fc7ff",
       "imagePosition": "center 35%",
       "transition": "magic",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBACdASogAAwAPvVkqk4qpaOiMAgBUB6JQBdgMW/Yf1vYvpOLtOiqtpcAAP79Df+4ZVzXhVpup5hHYPmobeBKwr1uVk+alH8YhQW9twq1sLuKuvZB5BsXVuePY8qQ+B7ujj2VyxLN8jr1wiSC9c5ziFUKZYsPEk3eT0T294/1/pWABj732oMrNoeJYt2aVqIYaBvbnCkQ/aaEeYqqpX33bp+/ICM6iPCpAAAA"
     },
     {
       "id": "berserk",
@@ -322,13 +431,20 @@
         "动画停在了一个让人难受的位置，但也正因如此，它成了一部必须去读原作的动画。三浦建太郎笔下的格斯，是我心中最顽强的角色之一。"
       ],
       "memory": "黄金时代篇的篝火与舞蹈；格斯第一次拔剑；结尾的蚀之刻。",
-      "tags": ["黑暗奇幻", "黄金时代", "悲剧", "格斯", "经典"],
+      "tags": [
+        "黑暗奇幻",
+        "黄金时代",
+        "悲剧",
+        "格斯",
+        "经典"
+      ],
       "image": "assets/img/berserk.webp",
       "thumb": "assets/img/berserk-thumb.webp",
       "accent": "#ff5a3c",
       "imagePosition": "center 35%",
       "transition": "brand",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAADwBACdASogABAAPvVoq04qpiQiMAgBUB6JYgCdMoCiASvqSfew5B2iwh087RtI4gAA/voKmUAD79vw89Iwhta+FGvr1A/xKl/AbDpb7MRWRNgqXBT1ivXTTc0gZFZf2gl79laWiW64idrsdLldTNFu5WNaEiq+o/a2lZdE3/VoHyDMEfzz0G7+zsOTvblCdZTxMIkmg64jSrYu34HvMTew9sgf5wr/cZEVp+TJS13Glq3q2KWB4+6hkdS+wgqHgP0ajD3tUrZAAA=="
     },
     {
       "id": "aot",
@@ -348,13 +464,20 @@
         "从 WIT 到 MAPPA，制作水准一直在线。无论你喜不喜欢最后的走向，它都已经是这个时代无法绕开的作品。"
       ],
       "memory": "第一集超大型巨人探出头；调查兵团出征；看海那一幕。",
-      "tags": ["巨人", "战争", "自由", "群像", "史诗"],
+      "tags": [
+        "巨人",
+        "战争",
+        "自由",
+        "群像",
+        "史诗"
+      ],
       "image": "assets/img/aot.webp",
       "thumb": "assets/img/aot-thumb.webp",
       "accent": "#9fb7a0",
       "imagePosition": "center 32%",
       "transition": "wings",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADQBQCdASogABMAPvVmq04qpaQiMAgBUB6JQBXGtASwB5AAEKvN7UCcbMIGsQRgqs6OLUbIuaFAAP7p9aj8UB+WkVCfIZY1X9glsSzCgI2TKwQWn5gHTgbDKFHb+QBpiYdHVO71Zxmzc6jxDkjQIyTmCG69ZXOdQlTBvT+lxX4pNLTfABOZFrcwNhTb3MW1xCEONvRfnHnjugUDqDJUfMwTyWI3C0vk0OAXUjtc5VXzY0zRiCExm5NkZHrucqi72LbhBdBtQAA="
     },
     {
       "id": "hibike",
@@ -374,13 +497,20 @@
         "京都动画对细节的执着在这部作品里几乎到了偏执的程度。手指按键、呼吸、乐器的反光、走廊里的脚步声，全都让“音乐”变得可以触摸。"
       ],
       "memory": "SunFes 行进演奏；宇治川的夕阳；那句“我想吹得更好”。",
-      "tags": ["京都动画", "吹奏乐", "青春", "群像", "不甘心"],
+      "tags": [
+        "京都动画",
+        "吹奏乐",
+        "青春",
+        "群像",
+        "不甘心"
+      ],
       "image": "assets/img/hibike.webp",
       "thumb": "assets/img/hibike-thumb.webp",
       "accent": "#f3c766",
       "imagePosition": "center 38%",
       "transition": "brass",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAADQBQCdASogABQAPvVsrVAqpiQisBgIAVAeiWYAuyDmRGMb7so8MdXrmlt1jWBMeUo9lZer2cgUAP7r/x3ZsAJQQOUQDxov5KqwIU1X5LVqA9Bjq4mXDiIBvLnyEswGJHRBPP2KkmUAJ6ONkigL1qmibLGYisGQrcyQ0qG/u2CiHufdQaJ+gTHmDt9lgTzalIoQIKtNu0YfOZlpsUPYa5orhBj8b6nRFSUkKQuvmVthsAL2mBx4S4uqL8mAAA=="
     },
     {
       "id": "bocchi",
@@ -400,13 +530,20 @@
         "制作组玩疯了各种媒介和画风，每一集都有新的视觉惊喜。看完之后真的会想拿起吉他，哪怕只会弹一根弦。"
       ],
       "memory": "波奇酱的社恐小剧场；第一次 Live 的紧张；文化祭上的那段solo。",
-      "tags": ["音乐", "社恐", "喜剧", "乐队", "CloverWorks"],
+      "tags": [
+        "音乐",
+        "社恐",
+        "喜剧",
+        "乐队",
+        "CloverWorks"
+      ],
       "image": "assets/img/bocchi.webp",
       "thumb": "assets/img/bocchi-thumb.webp",
       "accent": "#ff78ad",
       "imagePosition": "center 35%",
       "transition": "glitch",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAADQBQCdASogABYAPvVkqk4qpaOiMAgBUB6JQBgb5gl1EUJLzVHhbtXpoXnHd5kc4bEy423+R+qAAP7bz/dk8aOWKaFIPAFlDJcEN4qogVepAythaRkpMeTQRzWOnhHLBvs36GMqhlqZM4MUs51Z2TBWKkUeEMdQtJNjLn/JB0KP6LZ01GC8zn1opKd7uO+xHSQQ3B05ZVPwVu3gZe22k/zek9KThqjC3zCMtFMtDeVR6aOHwmhv6S9ZFS8oBbZUWLdm8rkRnnqCQZj5EA2hosbabx4xtEMKLo5ZrwL9SAGfOv4Zb8psMCCKjO35FZ1P4gAAAA=="
     },
     {
       "id": "k-on",
@@ -426,13 +563,20 @@
         "京都动画把“可爱”做得很高级：不是堆砌萌点，而是用动作、停顿和光影让你相信她们真的存在。毕业那几集，我每次看都会鼻酸。"
       ],
       "memory": "放学后的茶点；学园祭 Live；毕业旅行和新干线上的眼泪。",
-      "tags": ["日常", "音乐", "京都动画", "青春", "治愈"],
+      "tags": [
+        "日常",
+        "音乐",
+        "京都动画",
+        "青春",
+        "治愈"
+      ],
       "image": "assets/img/k-on.webp",
       "thumb": "assets/img/k-on-thumb.webp",
       "accent": "#f2b8c6",
       "imagePosition": "center 38%",
       "transition": "strings",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRkIBAABXRUJQVlA4IDYBAADQBgCdASogABQAPvVkqU4qpaOiMAgBUB6JbACdMyX5itSbOR2VpgOtQX3XbW4R3V0oXyBL3h+RLOOub8xs0agA3mEfHMg/o1zsotmcsFs4H8JW39mYIeclxfefBz247PwFH3EwrZArO53lf7dksdgdQJBiIr6IS+WjDdCZW7OwoBdOB8RQI1NCsVWh9wMa0cqd2R0FSfblbWru9zPdIkLWwDZcaxNZ8qySTlTKGQVTeBIhInb8j6g31phMVBPohTS/lri/GKVo6mCw2dA+x5n/6mG3fOj0vBquQOLT16NtSGqwNJnRYJOl1ftcMFCnnnKw/DHXfR2In7ai/uQWbWuguAA3rbED+yrzSuvw9adfneQoTIbEvjIl2MfmYfQmVZUlcntq1iyfTHpcaU5f02hCax9EWAAA"
     },
     {
       "id": "rezero",
@@ -452,13 +596,20 @@
         "白狐社的演出和声优表现撑起了很多名场面。它不完美，有些篇章节奏拖沓，但在我心里，它依然是异世界题材里最愿意认真对待“痛苦”的一部。"
       ],
       "memory": "从便利店出来的一瞬间；雷姆的告白；每次听到片头曲都条件反射地紧张。",
-      "tags": ["异世界", "死亡回归", "心理", "成长", "白狐社"],
+      "tags": [
+        "异世界",
+        "死亡回归",
+        "心理",
+        "成长",
+        "白狐社"
+      ],
       "image": "assets/img/rezero.webp",
       "thumb": "assets/img/rezero-thumb.webp",
       "accent": "#9ac3ff",
       "imagePosition": "center 35%",
       "transition": "clock",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAADwBQCdASogABcAPvVsr1EqpaQiqAqpUB6JYwC7ADHUgsLmva6SWEA6eEhqwvGNd53NXYPoxShUAAD+ufBu3StAzheEsQBzGzymyPXtrqUCQNTkiYgiUsGLbuyCQjvGZOxPQAepENsMnDjSRTu1c2FFexG+lnMrkUrydxRC4JLrXkSi0V6uaxy3Rqx1IKFieIZhxSQV6Ogck1XBE3615ZsjH6eiEUsb+D1Nd1opPRzvpib4AAA="
     },
     {
       "id": "fate-stay-night",
@@ -478,13 +629,20 @@
         "不过它的问题也很明显：士郎的信念有时被写得过于正确，感情线推进也略显生硬。它是我入坑 Fate 的重要一环，但放在整个系列里，只能算感情复杂的一部。"
       ],
       "memory": "Archer 的无限剑制；凛的傲娇；第一次看懂“正义的伙伴”有多沉重。",
-      "tags": ["Fate", "ufotable", "理想", "圣杯战争", "入坑作"],
+      "tags": [
+        "Fate",
+        "ufotable",
+        "理想",
+        "圣杯战争",
+        "入坑作"
+      ],
       "image": "assets/img/fate-stay-night.webp",
       "thumb": "assets/img/fate-stay-night-thumb.webp",
       "accent": "#e0c078",
       "imagePosition": "center 38%",
       "transition": "magic",
-      "switchGame": false
+      "switchGame": false,
+      "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBQCdASogABIAPvVmqk4qpaOiMAgBUB6JYgBW9IPf+o1NIqQ3/mwlE/ad/JnZkHE9sAAA/ujuDh1dnBDZj5WiEgajmD3E38KQ0fuC2dg26O0YreNs+Tr8rADx2JdQ5BMHYBev3Rk/ilop0/dfcN01EpLsLvw4FbZMRRwIszOAAA=="
     }
   ]
 }
