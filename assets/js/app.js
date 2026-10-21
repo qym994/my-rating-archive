@@ -253,13 +253,26 @@ function setupReveals() {
  * mode, backgrounds and chrome
  * ------------------------------------------------------------------ */
 
+let backdropTimer = 0;
+
+function setBackdropLayer(mode) {
+  if (!state.content) return;
+  const layers = $$('.site-bg__layer');
+  const index = mode === 'anime' ? 1 : 0;
+  if (!layers[index]) return;
+  const source = mode === 'anime'
+    ? state.content.site?.heroAnime || 'assets/img/hero-anime.webp'
+    : state.content.site?.heroGame || 'assets/img/hero-game.webp';
+  if (!layers[index].style.backgroundImage) layers[index].style.backgroundImage = `url("${safeURL(source)}")`;
+}
+
 function updateBackdrop() {
   if (!state.content) return;
-  const game = state.content.site?.heroGame || 'assets/img/elden-ring.webp';
-  const anime = state.content.site?.heroAnime || 'assets/img/frieren.webp';
-  const layers = $$('.site-bg__layer');
-  if (layers[0]) layers[0].style.backgroundImage = `url("${safeURL(game)}")`;
-  if (layers[1]) layers[1].style.backgroundImage = `url("${safeURL(anime)}")`;
+  setBackdropLayer(state.mode);
+  // Load the inactive atmosphere image after the page has settled. It is
+  // intentionally not fetched together with the initial view.
+  clearTimeout(backdropTimer);
+  backdropTimer = setTimeout(() => setBackdropLayer(state.mode === 'game' ? 'anime' : 'game'), 1800);
 }
 
 function updateModeChrome({ animate = false } = {}) {
@@ -301,6 +314,7 @@ function updateModeChrome({ animate = false } = {}) {
 
 function setMode(mode, { animate = true } = {}) {
   if (!['game', 'anime'].includes(mode) || mode === state.mode) return;
+  setBackdropLayer(mode);
   state.mode = mode;
   storage.setMode(mode);
   updateModeChrome({ animate });
@@ -318,9 +332,10 @@ function cardMarkup(entry, index) {
   const showEdit = state.isEditing;
   const image = safeURL(entry.thumb || entry.image || '');
   const pos = safePosition(entry.imagePosition);
+  const initial = String(entry.title || '?').trim().slice(0, 1);
   return `
     <button class="entry-card" type="button" data-id="${escapeAttr(entry.id)}" draggable="${showEdit}" aria-label="查看《${escapeAttr(entry.title)}》的评价" title="${escapeAttr(entry.quote || entry.title)}">
-      <span class="entry-card__media" style='--pos:${pos}'>${image ? `<img src="${image}" alt="" loading="eager" decoding="async" />` : ''}</span>
+      <span class="entry-card__media" data-initial="${escapeAttr(initial)}" style='--pos:${pos}'>${image ? `<img src="${image}" alt="" loading="eager" decoding="async" />` : ''}</span>
       <span class="entry-card__no"></span>
       <span class="entry-card__top">
         <span class="entry-card__rank">NO.${String(index + 1).padStart(2, '0')}</span>
@@ -367,6 +382,15 @@ function renderBoard() {
   }
 
   el.tierBoard.innerHTML = pieces.join('');
+  $$('.entry-card__media img', el.tierBoard).forEach(img => {
+    const media = img.closest('.entry-card__media');
+    if (!media) return;
+    if (img.complete && img.naturalWidth) {
+      media.classList.add('is-loaded');
+      return;
+    }
+    img.addEventListener('load', () => media.classList.add('is-loaded'), { once: true });
+  });
   if (el.boardHint) {
     el.boardHint.textContent = state.isEditing
       ? '编辑模式：拖动卡片调整层级与顺序。修改只保存在本机，记得发布或导出。'
