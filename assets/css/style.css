@@ -915,11 +915,20 @@ body[data-mode="anime"] .mode-switch__indicator { transform: translateY(100%); }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-position: var(--pos, center);
-  background-size: cover;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(var(--tier-rgb), 0.1), transparent 55%),
+    #15171d;
   filter: saturate(0.82) brightness(0.82);
   transform: scale(1.015);
   transition: transform 0.7s var(--ease), filter 0.5s ease;
+  overflow: hidden;
+}
+.entry-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--pos, center);
+  display: block;
 }
 .entry-card::after {
   position: absolute;

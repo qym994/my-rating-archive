@@ -320,7 +320,7 @@ function cardMarkup(entry, index) {
   const pos = safePosition(entry.imagePosition);
   return `
     <button class="entry-card" type="button" data-id="${escapeAttr(entry.id)}" draggable="${showEdit}" aria-label="查看《${escapeAttr(entry.title)}》的评价" title="${escapeAttr(entry.quote || entry.title)}">
-      <span class="entry-card__media" style='background-image:url("${image}");--pos:${pos}'></span>
+      <span class="entry-card__media" style='--pos:${pos}'>${image ? `<img src="${image}" alt="" loading="eager" decoding="async" />` : ''}</span>
       <span class="entry-card__no"></span>
       <span class="entry-card__top">
         <span class="entry-card__rank">NO.${String(index + 1).padStart(2, '0')}</span>
